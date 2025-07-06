@@ -8,16 +8,16 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- Delete word backwords
-keymap.set("n", "dw", 'vb"_d')
+-- keymap.set("n", "dw", 'vb"_d')
 
 --Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Manage buffers with barbar.nvim
-keymap.set("n", "te", ":enew<CR>", { silent = true })                      -- new buffer
-keymap.set("n", "tc", ":bd<CR>", { silent = true })                        -- close current buffer
-keymap.set("n", "tt", ":BufferNext<CR>", { silent = true })          -- next buffer
-keymap.set("n", "tp", ":BufferPrevious<CR>", { silent = true })    -- previous buffer
+keymap.set("n", "te", ":enew<CR>", { silent = true }) -- new buffer
+keymap.set("n", "tc", ":bd<CR>", { silent = true }) -- close current buffer
+keymap.set("n", "tt", ":BufferNext<CR>", { silent = true }) -- next buffer
+keymap.set("n", "tp", ":BufferPrevious<CR>", { silent = true }) -- previous buffer
 
 -- Split window
 keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
@@ -55,4 +55,3 @@ keymap.set("n", ":", "<cmd>FineCmdline<CR>", { noremap = true })
 
 --DapUI
 keymap.set("n", "<Leader>dt", [[<cmd>lua require('dapui').toggle()<CR>]], { noremap = true })
-
