@@ -50,8 +50,5 @@ keymap.set("n", "<Leader>e", "<cmd>Neotree toggle<cr>")
 --Toggle Terminals
 keymap.set("n", "<Leader>t", "<cmd>ToggleTerm<cr>")
 
---Floating terminal
-keymap.set("n", ":", "<cmd>FineCmdline<CR>", { noremap = true })
-
 --DapUI
 keymap.set("n", "<Leader>dt", [[<cmd>lua require('dapui').toggle()<CR>]], { noremap = true })

@@ -7,6 +7,7 @@ local mason = require("mason")
 local path = require("mason-core.path")
 local mason_registry = require("mason-registry")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local util = require("lspconfig.util")
 
 mason.setup()
 ---@class MasonSettings
@@ -194,7 +195,17 @@ lspconfig.tailwindcss.setup({ capabilities = capabilities })
 lspconfig.pyright.setup({ capabilities = capabilities })
 lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.lua_ls.setup({ capabilities = capabilities })
-lspconfig.jdtls.setup({ capabilities = capabilities })
+lspconfig.jdtls.setup({
+	capabilities = capabilities,
+	root_dir = util.root_pattern(".git", "mvnw", "gradlew", "build.gradle", "pom.xml"),
+	cmd = {
+		"jdtls",
+		"-configuration",
+		vim.fn.stdpath("cache") .. "/jdtls/config",
+		"-data",
+		vim.fn.stdpath("cache") .. "/jdtls/workspace",
+	},
+})
 lspconfig.intelephense.setup({
 	capabilities = capabilities,
 	settings = {
@@ -208,7 +219,6 @@ local vue_language_server =
 	"/home/nodesure/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language_server"
 
 lspconfig.ts_ls.setup({
-	capabilities = capabilities,
 	init_options = {
 		plugins = {
 			{
@@ -227,8 +237,10 @@ lspconfig.ts_ls.setup({
 		"typescript.tsx",
 		"vue",
 	},
+	},
+	capabilities = capabilities,
 })
 
 lspconfig.marksman.setup({ capabilities = capabilities })
 lspconfig.texlab.setup({ capabilities = capabilities })
--- lspconfig.vls.setup({ capabilities = capabilities })
+lspconfig.vls.setup({ capabilities = capabilities })
