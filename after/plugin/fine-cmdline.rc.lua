@@ -1,5 +1,6 @@
 local status, fine_cmdline = pcall(require("fine-cmdline"))
 if not status then
+	print("No fincmd ")
 	return
 end
 
@@ -37,5 +38,5 @@ fine_cmdline.setup({
 	},
 })
 
---Floating terminal
+--Floating command
 vim.keymap.set("n", ":", "<cmd>FineCmdline<CR>", { noremap = true })
