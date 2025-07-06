@@ -237,7 +237,6 @@ lspconfig.ts_ls.setup({
 		"typescript.tsx",
 		"vue",
 	},
-	},
 	capabilities = capabilities,
 })
 
