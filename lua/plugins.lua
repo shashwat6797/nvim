@@ -126,16 +126,23 @@ packer.startup(function(use)
 	use("lervag/vimtex")
 	use({
 		"VonHeikemen/fine-cmdline.nvim",
-		requires = {
-			{ "MunifTanjim/nui.nvim" },
-		},
+		requires = { "MunifTanjim/nui.nvim" },
+		config = function()
+			require("fine-cmdline").setup({
+				popup = {
+					border = {
+						style = "rounded",
+					},
+				},
+			})
+		end,
 	})
 	use("xiyaowong/transparent.nvim")
 	use("kabouzeid/nvim-lspinstall")
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use("Shougo/ddc.vim")
-
+	use("tpope/vim-fugitive")
+	use("sindrets/diffview.nvim")
 	--use("vim-denops/denops.vim")
 	--use("vim-denops/denops-helloworld.vim")
 end)
-

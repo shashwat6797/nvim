@@ -52,3 +52,7 @@ keymap.set("n", "<Leader>t", "<cmd>ToggleTerm<cr>")
 
 --DapUI
 keymap.set("n", "<Leader>dt", [[<cmd>lua require('dapui').toggle()<CR>]], { noremap = true })
+
+--Diffview
+keymap.set("n", "<Leader>do", [[<cmd>DiffviewOpen<CR>]], { noremap = true })
+keymap.set("n", "<Leader>dc", [[<cmd>DiffviewClose<CR>]], { noremap = true })
